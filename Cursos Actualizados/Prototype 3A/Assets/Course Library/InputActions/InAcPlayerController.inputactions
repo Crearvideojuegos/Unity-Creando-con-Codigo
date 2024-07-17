@@ -1,0 +1,45 @@
+{
+    "name": "InAcPlayerController",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "41d9badc-ae62-4cdd-83da-6ac8b58af18c",
+            "actions": [
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "acb343c3-1a28-4897-a6ce-de6f8dc2e488",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b8a48ac6-6b81-4dbd-a14b-ae2cffe43894",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "95d2543b-33be-45b0-b54b-a9248e52d211",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
