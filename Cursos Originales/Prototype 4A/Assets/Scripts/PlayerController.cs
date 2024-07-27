@@ -22,8 +22,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        float forwardIpnut = Input.GetAxis("Vertical");
-        playerRb.AddForce(focalPoint.transform.forward * forwardIpnut * speed);
+        float forwardInput = Input.GetAxis("Vertical");
+        playerRb.AddForce(focalPoint.transform.forward * forwardInput * speed);
     }
 
     private void OnTriggerEnter(Collider other)
