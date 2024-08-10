@@ -5,19 +5,19 @@ using UnityEngine.UI;
 
 public class DifficultyButtons : MonoBehaviour
 {
-    private Button button;
-    private GameManager gameManager;
-    public int difficulty;
+    private Button _button;
+    private GameManager _gameManager;
+    public int Difficulty;
 
-    void Start()
+    private void Start()
     {
-        button = GetComponent<Button>();
-        button.onClick.AddListener(SetDifficulty);
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        _button = GetComponent<Button>();
+        _button.onClick.AddListener(SetDifficulty);
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
-    void SetDifficulty()
+    private void SetDifficulty()
     {
-        gameManager.StartGame(difficulty);
+        _gameManager.StartGame(Difficulty);
     }
 }

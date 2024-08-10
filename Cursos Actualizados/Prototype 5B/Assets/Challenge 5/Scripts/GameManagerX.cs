@@ -7,84 +7,84 @@ using UnityEngine.UI;
 
 public class GameManagerX : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI gameOverText;
+    public TextMeshProUGUI ScoreText;
+    public TextMeshProUGUI GameOverText;
     public TextMeshProUGUI TimeText;
 
-    public GameObject titleScreen;
-    public Button restartButton; 
+    public GameObject TitleScreen;
+    public Button RestartButton; 
 
-    public List<GameObject> targetPrefabs;
+    public List<GameObject> TargetPrefabs;
 
-    private int score;
-    private float spawnRate = 1.5f;
-    public bool isGameActive;
+    private int _score;
+    private float _spawnRate = 1.5f;
+    public bool IsGameActive;
 
-    private float spaceBetweenSquares = 2.5f; 
-    private float minValueX = -3.75f; //  x value of the center of the left-most square
-    private float minValueY = -3.75f; //  y value of the center of the bottom-most square
+    private float _spaceBetweenSquares = 2.5f; 
+    private float _minValueX = -3.75f; //  x value of the center of the left-most square
+    private float _minValueY = -3.75f; //  y value of the center of the bottom-most square
 
-    private float timeRemaining = 60f;
+    private float _timeRemaining = 60f;
     
-    // Start the game, remove title screen, reset score, and adjust spawnRate based on difficulty button clicked
+    // Start the game, remove title screen, reset _score, and adjust _spawnRate based on difficulty button clicked
     public void StartGame(int difficulty)
     {
         if(difficulty == 1)
         {
-            spawnRate /= 1;
+            _spawnRate /= 1;
 
         } else if(difficulty == 2)
         {
-            spawnRate /= 2;
+            _spawnRate /= 2;
         } else if(difficulty == 3)
         {
-            spawnRate /= 3;
+            _spawnRate /= 3;
         }
-        isGameActive = true;
+        IsGameActive = true;
         StartCoroutine(SpawnTarget());
-        score = 0;
+        _score = 0;
         UpdateScore(0);
-        titleScreen.SetActive(false);
+        TitleScreen.SetActive(false);
     }
 
     private void Update() 
     {
-        if(isGameActive)
+        if(IsGameActive)
         {
-            if (timeRemaining > 0)
+            if (_timeRemaining > 0)
             {
-                timeRemaining -= Time.deltaTime;
+                _timeRemaining -= Time.deltaTime;
             } else {
                 GameOver();
             }
 
-            TimeText.text = "Time: " + timeRemaining.ToString("f0");
+            TimeText.text = "Time: " + _timeRemaining.ToString("f0");
 
         }
 
     }
 
     // While game is active spawn a random target
-    IEnumerator SpawnTarget()
+    private IEnumerator SpawnTarget()
     {
-        while (isGameActive)
+        while (IsGameActive)
         {
-            yield return new WaitForSeconds(spawnRate);
-            int index = Random.Range(0, targetPrefabs.Count);
+            yield return new WaitForSeconds(_spawnRate);
+            int index = Random.Range(0, TargetPrefabs.Count);
 
-            if (isGameActive)
+            if (IsGameActive)
             {
-                Instantiate(targetPrefabs[index], RandomSpawnPosition(), targetPrefabs[index].transform.rotation);
+                Instantiate(TargetPrefabs[index], RandomSpawnPosition(), TargetPrefabs[index].transform.rotation);
             }
             
         }
     }
 
     // Generate a random spawn position based on a random index from 0 to 3
-    Vector3 RandomSpawnPosition()
+    private Vector3 RandomSpawnPosition()
     {
-        float spawnPosX = minValueX + (RandomSquareIndex() * spaceBetweenSquares);
-        float spawnPosY = minValueY + (RandomSquareIndex() * spaceBetweenSquares);
+        float spawnPosX = _minValueX + (RandomSquareIndex() * _spaceBetweenSquares);
+        float spawnPosY = _minValueY + (RandomSquareIndex() * _spaceBetweenSquares);
 
         Vector3 spawnPosition = new Vector3(spawnPosX, spawnPosY, 0);
         return spawnPosition;
@@ -92,25 +92,25 @@ public class GameManagerX : MonoBehaviour
     }
 
     // Generates random square index from 0 to 3, which determines which square the target will appear in
-    int RandomSquareIndex()
+    private int RandomSquareIndex()
     {
         return Random.Range(0, 4);
     }
 
-    // Update score with value from target clicked
+    // Update _score with value from target clicked
     public void UpdateScore(int scoreToAdd)
     {
-        score += scoreToAdd;
-        scoreText.text = $"Score: {score}";
+        _score += scoreToAdd;
+        ScoreText.text = $"Score: {_score}";
 
     }
 
     // Stop game, bring up game over text and restart button
     public void GameOver()
     {
-        gameOverText.gameObject.SetActive(true);
-        restartButton.gameObject.SetActive(true);
-        isGameActive = false;
+        GameOverText.gameObject.SetActive(true);
+        RestartButton.gameObject.SetActive(true);
+        IsGameActive = false;
     }
 
     // Restart game by reloading the scene

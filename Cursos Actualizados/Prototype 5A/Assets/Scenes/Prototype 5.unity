@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a19c96a27b95bb4d9cb833d8825cab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficulty: 3
+  Difficulty: 3
 --- !u!114 &275606599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1220,16 +1220,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4535b919d872bd5499171692ad884a7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets:
+  Targets:
   - {fileID: 8974019669587235388, guid: 116bb489be7e45c43aff6d478a844b58, type: 3}
   - {fileID: 302855309024483358, guid: 893c02824b408d545a5d7ef5bd8949f9, type: 3}
   - {fileID: 8606158034367197366, guid: 56c61db687f8b1e44a32ef22298ce7c3, type: 3}
   - {fileID: 1144111937179340476, guid: f21fd47a04a0aa94e81e0138ddb843c3, type: 3}
-  scoreText: {fileID: 1652309168}
-  gameOverText: {fileID: 1082326054}
-  isGameActive: 0
-  restartButton: {fileID: 799675110}
-  titleScreen: {fileID: 918516459}
+  ScoreText: {fileID: 1652309168}
+  GameOverText: {fileID: 1082326054}
+  IsGameActive: 0
+  RestartButton: {fileID: 799675110}
+  TitleScreen: {fileID: 918516459}
 --- !u!4 &1013059725
 Transform:
   m_ObjectHideFlags: 0
@@ -1519,7 +1519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a19c96a27b95bb4d9cb833d8825cab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficulty: 2
+  Difficulty: 2
 --- !u!114 &1203813103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1984,7 +1984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a19c96a27b95bb4d9cb833d8825cab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficulty: 1
+  Difficulty: 1
 --- !u!114 &1874199853
 MonoBehaviour:
   m_ObjectHideFlags: 0

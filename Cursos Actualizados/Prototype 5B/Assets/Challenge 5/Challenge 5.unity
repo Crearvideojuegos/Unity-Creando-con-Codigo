@@ -974,17 +974,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6467173372bc44b9cacdcd25af1c28bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 116231999}
-  gameOverText: {fileID: 919200876}
+  ScoreText: {fileID: 116231999}
+  GameOverText: {fileID: 919200876}
   TimeText: {fileID: 1223209168}
-  titleScreen: {fileID: 92482018}
-  restartButton: {fileID: 1902351379}
-  targetPrefabs:
+  TitleScreen: {fileID: 92482018}
+  RestartButton: {fileID: 1902351379}
+  TargetPrefabs:
   - {fileID: 5817859361576445215, guid: 9cc97627ed18b449695d703ab651f5cd, type: 3}
   - {fileID: 1996815852551487035, guid: 11bccc60726374a918b5c73120d47ab3, type: 3}
   - {fileID: 5626452297013284046, guid: c5bbabce5ea79419488492993bfdadf0, type: 3}
   - {fileID: 3867821073191959212, guid: 591e0b0a9b4dd4709ad61b99dabf57ef, type: 3}
-  isGameActive: 0
+  IsGameActive: 0
 --- !u!4 &1128873052
 Transform:
   m_ObjectHideFlags: 0
