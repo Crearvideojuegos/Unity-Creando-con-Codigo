@@ -24,7 +24,7 @@ public class GameManagerX : MonoBehaviour
     private float minValueX = -3.75f; //  x value of the center of the left-most square
     private float minValueY = -3.75f; //  y value of the center of the bottom-most square
 
-    private float timeRemaining = 10f;
+    private float timeRemaining = 60f;
     
     // Start the game, remove title screen, reset score, and adjust spawnRate based on difficulty button clicked
     public void StartGame(int difficulty)
@@ -58,7 +58,8 @@ public class GameManagerX : MonoBehaviour
                 GameOver();
             }
 
-            TimeText.text = "Time: " + timeRemaining;
+            TimeText.text = "Time: " + timeRemaining.ToString("f0");
+
         }
 
     }

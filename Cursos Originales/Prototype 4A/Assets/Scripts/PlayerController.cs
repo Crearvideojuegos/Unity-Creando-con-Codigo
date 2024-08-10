@@ -17,13 +17,14 @@ public class PlayerController : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody>();
         focalPoint = GameObject.Find("Focal Point");
-        powerupIndicator.transform.position = transform.position + new Vector3(0, -0.5f, 0);
     }
 
     void Update()
     {
         float forwardInput = Input.GetAxis("Vertical");
         playerRb.AddForce(focalPoint.transform.forward * forwardInput * speed);
+        powerupIndicator.transform.position = transform.position + new Vector3(0, -0.5f, 0);
+
     }
 
     private void OnTriggerEnter(Collider other)
